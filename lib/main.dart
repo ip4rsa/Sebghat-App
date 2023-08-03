@@ -45,7 +45,7 @@ class Sebghat extends StatelessWidget {
               fontFamily: 'yekanlight', fontSize: 19, color: Colors.black),
         ),
         primarySwatch: Colors.orange,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Color.fromARGB(255, 255, 255, 255),
         ),
       ),
