@@ -42,7 +42,7 @@ class NewInquiry extends StatelessWidget {
               decoration: const BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Color.fromARGB(67, 113, 113, 113),
+                      color: Color.fromARGB(81, 113, 113, 113),
                       spreadRadius: .2,
                       blurRadius: 10,
                       offset: Offset(.0, .5),
