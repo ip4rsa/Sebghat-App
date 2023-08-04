@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sebghat_app/view/homeScreen.dart';
+import 'package:sebghat_app/view/mainScreen.dart';
 import 'package:sebghat_app/view/SingInPage.dart';
 
 class LogInPage extends StatelessWidget {

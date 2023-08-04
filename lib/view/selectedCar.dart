@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sebghat_app/view/AddCar.dart';
+import 'package:sebghat_app/view/OrderPage.dart';
 
 class text extends StatelessWidget {
   const text({super.key});
@@ -74,7 +75,7 @@ class text extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DropDwonMenu(),
+                            builder: (context) => AddCar(),
                           ),
                         );
                       },
@@ -146,7 +147,11 @@ class text extends StatelessWidget {
                           ),
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => OrderPage(),
+                              )),
                           style: ElevatedButton.styleFrom(
                               elevation: 2,
                               backgroundColor:
