@@ -121,7 +121,28 @@ class homeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Divider(),
+              const Divider(
+                color: Color.fromARGB(93, 255, 255, 255),
+                thickness: .3,
+              ),
+              const SizedBox(height: 20),
+              InkWell(
+                onTap: () {},
+                child: const ListTile(
+                    title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      "حساب کاربری",
+                      style: TextStyle(color: Color.fromARGB(255, 87, 239, 92)),
+                    ),
+                    Text(
+                      "خروج",
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ],
+                )),
+              ),
             ],
           ),
         ),
