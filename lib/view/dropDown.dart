@@ -94,3 +94,56 @@
 //     ),
 //   );
 // }
+import 'package:flutter/material.dart';
+
+class DropDwonMenu extends StatefulWidget {
+  const DropDwonMenu({super.key});
+
+  @override
+  State<DropDwonMenu> createState() => _DropDwonMenuState();
+}
+
+class _DropDwonMenuState extends State<DropDwonMenu> {
+  final items = ['مرسدس بنز', 'آ او دی', 'پژو 207', 'ایران خودرو'];
+  String? value;
+  String dropValue = 'ok';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 253, 253, 253),
+            borderRadius: const BorderRadius.all(Radius.circular(15)),
+            border: Border.all(
+                color: const Color.fromARGB(125, 250, 172, 15), width: 2),
+          ),
+          width: 250,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(8, 0, 10, 0),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton(
+                value: value,
+                isExpanded: true,
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                icon: const Icon(Icons.keyboard_arrow_down_sharp),
+                iconSize: 30,
+                elevation: 3,
+                items: items.map(buildMemuItem).toList(),
+                onChanged: (value) => setState(() => this.value = value),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  DropdownMenuItem<String> buildMemuItem(String item) => DropdownMenuItem(
+        value: item,
+        child: Text(
+          item,
+          style: TextStyle(color: const Color.fromARGB(255, 45, 36, 12)),
+        ),
+      );
+}

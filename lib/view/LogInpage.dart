@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sebghat_app/view/homeScreen.dart';
 import 'package:sebghat_app/view/SingInPage.dart';
-import 'package:sebghat_app/view/homeScreen.dart';
 
 class LogInPage extends StatelessWidget {
   LogInPage({super.key});
@@ -20,7 +19,7 @@ class LogInPage extends StatelessWidget {
           Text(
             "ورود به حساب کاربری",
             textDirection: TextDirection.rtl,
-            style: textTem.headline2,
+            style: textTem.headline3,
           ),
           const SizedBox(height: 20),
           Padding(
@@ -66,7 +65,7 @@ class LogInPage extends StatelessWidget {
             },
             child: Text(
               "ورود",
-              style: textTem.headline3,
+              style: textTem.headline2,
             ),
           ),
           const SizedBox(height: 35),

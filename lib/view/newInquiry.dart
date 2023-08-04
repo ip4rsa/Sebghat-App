@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:sebghat_app/view/dropDown.dart';
+import 'package:sebghat_app/view/selectedCar.dart';
 
 class NewInquiry extends StatelessWidget {
   const NewInquiry({super.key});
@@ -9,6 +12,46 @@ class NewInquiry extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: Container(
+          decoration: const BoxDecoration(
+              color: Color.fromARGB(255, 17, 24, 39),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10), topRight: Radius.circular(10))),
+          child: const Padding(
+            padding: EdgeInsets.all(11.0),
+            child: GNav(
+              backgroundColor: Color.fromARGB(255, 17, 24, 39),
+              color: Color.fromARGB(255, 255, 255, 255),
+              activeColor: Colors.white,
+              tabBackgroundColor: Color.fromARGB(133, 74, 74, 74),
+              padding: EdgeInsets.all(15),
+              gap: 6,
+              tabs: [
+                GButton(
+                  // onPressed: () => callBackPage(0),
+                  icon: Icons.home,
+                  text: 'خانه',
+                  textStyle:
+                      TextStyle(fontFamily: "yekanlight", color: Colors.white),
+                ),
+                GButton(
+                  // onPressed: () => callBackPage(1),
+                  icon: Icons.add,
+                  text: 'استعلام جدید',
+                  textStyle:
+                      TextStyle(fontFamily: "yekanlight", color: Colors.white),
+                ),
+                GButton(
+                  // onPressed: () => callBackPage(2),
+                  icon: Icons.account_balance,
+                  text: 'حساب کاربری',
+                  textStyle:
+                      TextStyle(fontFamily: "yekanlight", color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+        ),
         body: Column(
           children: [
             Container(
@@ -73,7 +116,7 @@ class NewInquiry extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => NewInquiry(),
+                            builder: (context) => text(),
                           ),
                         );
                       },
