@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:sebghat_app/view/AddCar.dart';
 import 'package:sebghat_app/view/selectedCar.dart';
 
 class NewInquiry extends StatelessWidget {
@@ -80,7 +79,7 @@ class NewInquiry extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: size.height / 5),
+            SizedBox(height: size.height / 6),
             Container(
               decoration: const BoxDecoration(
                   boxShadow: [

@@ -63,7 +63,7 @@ class text extends StatelessWidget {
                     ),
                     ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                          elevation: 2,
+                          elevation: 0,
                           backgroundColor: const Color.fromRGBO(240, 165, 0, 1),
                           shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(
@@ -125,32 +125,28 @@ class text extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 25),
+                    const SizedBox(height: 25),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
+                          onPressed: () => Navigator.pop(context),
+                          style: ElevatedButton.styleFrom(
+                              elevation: 2,
+                              backgroundColor:
+                                  const Color.fromARGB(182, 34, 38, 66),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(16),
+                                ),
+                              )),
+                          child: const Text(
                             "بازگشت",
                             style: TextStyle(color: Colors.white),
                           ),
-                          style: ElevatedButton.styleFrom(
-                              elevation: 2,
-                              backgroundColor:
-                                  const Color.fromARGB(182, 34, 38, 66),
-                              shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(16),
-                                ),
-                              )),
                         ),
                         ElevatedButton(
                           onPressed: () {},
-                          child: Text(
-                            "مرحله بعد",
-                            style: TextStyle(color: Colors.white),
-                          ),
                           style: ElevatedButton.styleFrom(
                               elevation: 2,
                               backgroundColor:
@@ -160,6 +156,10 @@ class text extends StatelessWidget {
                                   Radius.circular(16),
                                 ),
                               )),
+                          child: const Text(
+                            "مرحله بعد",
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ],
                     ),

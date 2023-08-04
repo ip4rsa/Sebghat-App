@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sebghat_app/view/LogInpage.dart';
-import 'package:sebghat_app/view/selectedCar.dart';
 
 class DropDwonMenu extends StatefulWidget {
   const DropDwonMenu({super.key});
@@ -10,7 +9,9 @@ class DropDwonMenu extends StatefulWidget {
 }
 
 class _DropDwonMenuState extends State<DropDwonMenu> {
-  final items = ['مرسدس بنز', 'آ او دی', 'پژو 207', 'ایران خودرو'];
+  final carList = ['مرسدس بنز', 'آ او دی', 'پژو 207', 'ایران خودرو'];
+  final carModel = ['ای ام جی'];
+  final carColor = ['آبی', 'شیری', 'سفید', 'مشکی', 'نارنجی'];
   String? value;
   String dropValue = 'ok';
   @override
@@ -51,10 +52,18 @@ class _DropDwonMenuState extends State<DropDwonMenu> {
                 padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 253, 253, 253),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color.fromARGB(61, 113, 113, 113),
+                        spreadRadius: .3,
+                        blurRadius: 5,
+                        offset: Offset(.0, .5),
+                      ),
+                    ],
+                    color: const Color.fromARGB(255, 253, 253, 253),
                     borderRadius: const BorderRadius.all(Radius.circular(15)),
                     border: Border.all(
-                        color: Color.fromARGB(78, 74, 74, 74), width: 1),
+                        color: const Color.fromARGB(78, 74, 74, 74), width: 1),
                   ),
                   // height: 800,
                   child: Column(
@@ -106,7 +115,7 @@ class _DropDwonMenuState extends State<DropDwonMenu> {
                                     const Icon(Icons.keyboard_arrow_down_sharp),
                                 iconSize: 30,
                                 elevation: 3,
-                                items: items.map(buildMemuItem).toList(),
+                                items: carList.map(buildMemuItem).toList(),
                                 onChanged: (value) =>
                                     setState(() => this.value = value),
                               ),
@@ -146,7 +155,7 @@ class _DropDwonMenuState extends State<DropDwonMenu> {
                                     const Icon(Icons.keyboard_arrow_down_sharp),
                                 iconSize: 30,
                                 elevation: 3,
-                                items: items.map(buildMemuItem).toList(),
+                                items: carModel.map(buildMemuItem).toList(),
                                 onChanged: (value) =>
                                     setState(() => this.value = value),
                               ),
@@ -186,8 +195,8 @@ class _DropDwonMenuState extends State<DropDwonMenu> {
                                     const Icon(Icons.keyboard_arrow_down_sharp),
                                 iconSize: 30,
                                 elevation: 3,
-                                items: items.map(buildMemuItem).toList(),
-                                onChanged: (value) =>
+                                items: carColor.map(buildMemuItem).toList(),
+                                onChanged: (carColor) =>
                                     setState(() => this.value = value),
                               ),
                             ),
@@ -249,9 +258,9 @@ class _DropDwonMenuState extends State<DropDwonMenu> {
                                             255, 255, 255, 255)),
                                   ),
                                 ),
-                                const SizedBox(height: 20),
+                                const SizedBox(height: 30),
                                 const Text("عکس شاسی"),
-                                const SizedBox(height: 5),
+                                const SizedBox(height: 10),
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       elevation: 0,
@@ -307,11 +316,47 @@ class _DropDwonMenuState extends State<DropDwonMenu> {
                             ),
                           ),
                         ],
-                      )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 20, 5, 20),
+                        child: Row(
+                          children: [
+                            Icon(Icons.tab_rounded),
+                            ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                  elevation: 0,
+                                  backgroundColor:
+                                      const Color.fromARGB(255, 6, 160, 75),
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(10),
+                                    ),
+                                  )),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LogInPage(),
+                                  ),
+                                );
+                              },
+                              icon:
+                                  const Icon(Icons.check, color: Colors.white),
+                              label: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(8, 13, 0, 13),
+                                child:
+                                    Text("ثبت خودرو", style: textTem.headline4),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
+              const SizedBox(height: 40),
             ],
           ),
         ),
@@ -323,7 +368,7 @@ class _DropDwonMenuState extends State<DropDwonMenu> {
         value: item,
         child: Text(
           item,
-          style: TextStyle(color: const Color.fromARGB(255, 45, 36, 12)),
+          style: const TextStyle(color: Color.fromARGB(255, 29, 29, 29)),
         ),
       );
 }
