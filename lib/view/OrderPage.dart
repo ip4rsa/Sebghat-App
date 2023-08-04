@@ -9,9 +9,8 @@ class OrderPage extends StatefulWidget {
 }
 
 class _OrderPageState extends State<OrderPage> {
-  final carList = ['مرسدس بنز', 'آ او دی', 'پژو 207', 'ایران خودرو'];
-  final carModel = ['ای ام جی'];
-  final carColor = ['آبی', 'شیری', 'سفید', 'مشکی', 'نارنجی'];
+  final ghatae = ['جلوبندی', 'گیربکس', 'لاستیک', 'موتوری'];
+  final tipe = ['نو', 'کاکرده', 'هردو'];
   String? value;
   String dropValue = 'ok';
   @override
@@ -115,7 +114,7 @@ class _OrderPageState extends State<OrderPage> {
                                     const Icon(Icons.keyboard_arrow_down_sharp),
                                 iconSize: 30,
                                 elevation: 3,
-                                items: carList.map(buildMemuItem).toList(),
+                                items: ghatae.map(buildMemuItem).toList(),
                                 onChanged: (value) =>
                                     setState(() => this.value = value),
                               ),
@@ -155,7 +154,7 @@ class _OrderPageState extends State<OrderPage> {
                                     const Icon(Icons.keyboard_arrow_down_sharp),
                                 iconSize: 30,
                                 elevation: 3,
-                                items: carModel.map(buildMemuItem).toList(),
+                                items: tipe.map(buildMemuItem).toList(),
                                 onChanged: (value) =>
                                     setState(() => this.value = value),
                               ),
