@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sebghat_app/view/AddCar.dart';
 import 'package:sebghat_app/view/OrderPage.dart';
+import 'package:sebghat_app/view/SplashScreen.dart';
 
-class text extends StatelessWidget {
+class text extends StatefulWidget {
   const text({super.key});
 
+  @override
+  State<text> createState() => _textState();
+}
+
+class _textState extends State<text> {
   @override
   Widget build(BuildContext context) {
     var textTem = Theme.of(context).textTheme;
@@ -40,57 +47,6 @@ class text extends StatelessWidget {
               ),
             ),
             SizedBox(height: size.height / 7),
-            Container(
-              decoration: const BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromARGB(81, 113, 113, 113),
-                      spreadRadius: .2,
-                      blurRadius: 10,
-                      offset: Offset(.0, .5),
-                    ),
-                  ],
-                  color: Color.fromRGBO(250, 250, 250, 1),
-                  borderRadius: BorderRadius.all(Radius.circular(17))),
-              width: 345,
-              height: 200,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(5, 20, 5, 20),
-                      child: Text("ثبت خودرو جدید"),
-                    ),
-                    ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          backgroundColor: const Color.fromRGBO(240, 165, 0, 1),
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(16),
-                            ),
-                          )),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => AddCar(),
-                          ),
-                        );
-                      },
-                      icon: const Icon(Icons.add_circle_outline,
-                          color: Colors.white),
-                      label: Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 13, 20, 13),
-                        child: Text("ثبت خودرو", style: textTem.headline4),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: 40),
             Container(
               decoration: const BoxDecoration(
                   boxShadow: [
@@ -171,7 +127,72 @@ class text extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
+            // const SizedBox(height: 40),
+            const Divider(
+              height: 55,
+              thickness: .5,
+              endIndent: 60,
+              indent: 60,
+              color: Color.fromARGB(51, 164, 164, 164),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(81, 113, 113, 113),
+                      spreadRadius: .2,
+                      blurRadius: 10,
+                      offset: Offset(.0, .5),
+                    ),
+                  ],
+                  color: Color.fromRGBO(250, 250, 250, 1),
+                  borderRadius: BorderRadius.all(Radius.circular(17))),
+              width: 345,
+              height: 200,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(5, 20, 5, 20),
+                      child: Text("ثبت خودرو جدید"),
+                    ),
+                    ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: const Color.fromRGBO(240, 165, 0, 1),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(16),
+                            ),
+                          )),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddCar(),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.add_circle_outline,
+                          color: Colors.white),
+                      label: Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 13, 20, 13),
+                        child: Text("ثبت خودرو", style: textTem.headline4),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // Radio(
+            //   value: "radio value",
+            //   groupValue: "group value",
+            //   onChanged: (value) {
+            //     print(value); //selected value
+            //   },
+            // ),
           ],
         ),
       ),

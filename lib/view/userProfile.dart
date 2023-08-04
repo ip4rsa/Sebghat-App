@@ -9,37 +9,6 @@ class userProfile extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            height: 80,
-            color: const Color.fromRGBO(33, 43, 65, 1),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                InkWell(
-                  onTap: () {},
-                  child: const Icon(
-                    Icons.account_circle_rounded,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Image.asset(
-                    'assets/image/logoWith.png',
-                    height: 24,
-                  ),
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: const Icon(
-                    CupertinoIcons.list_dash,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-          ),
           const SizedBox(height: 40),
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 0, 25, 0),

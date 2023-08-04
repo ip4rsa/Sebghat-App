@@ -2,12 +2,11 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../model/homeItemData.dart';
 import 'newInquiry.dart';
 
 class homescreen extends StatelessWidget {
-  const homescreen({
+  homescreen({
     super.key,
     required this.size,
     required this.textTem,
@@ -26,7 +25,7 @@ class homescreen extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 1200,
+                  height: 1130,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/image/backgrond.jpg'),
@@ -36,7 +35,7 @@ class homescreen extends StatelessWidget {
                 ),
                 Container(
                   width: double.infinity,
-                  height: 1200,
+                  height: 1130,
                   color: const Color.fromARGB(182, 34, 38, 66),
                 ),
                 Center(
@@ -106,7 +105,10 @@ class homescreen extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => NewInquiry(),
+                                  builder: (context) => NewInquiry(
+                                    size: size,
+                                    textTem: textTem,
+                                  ),
                                 ));
                           },
                           icon:

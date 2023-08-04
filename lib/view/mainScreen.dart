@@ -7,61 +7,76 @@ import 'newInquiry.dart';
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-class homeScreen extends StatelessWidget {
-  const homeScreen({super.key});
+class homeScreen extends StatefulWidget {
+  @override
+  State<homeScreen> createState() => _homeScreenState();
+}
 
+var SelectedPageIndex = 0;
+
+class _homeScreenState extends State<homeScreen> {
   @override
   Widget build(BuildContext context) {
     var textTem = Theme.of(context).textTheme;
     var size = MediaQuery.of(context).size;
-    List<Widget> changePage = [homeScreen(), NewInquiry(), userProfile()];
+    List<Widget> changePage = [
+      homescreen(size: size, textTem: textTem),
+      NewInquiry(size: size, textTem: textTem),
+      userProfile()
+    ];
 
     return Scaffold(
-      key: _key,
-      appBar: AppBar(
-        toolbarHeight: 71,
-        automaticallyImplyLeading: false,
-        backgroundColor: const Color.fromRGBO(39, 43, 65, 1),
-        elevation: 2,
-        title: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell(
-                onTap: (() {
-                  _key.currentState!.openDrawer();
-                }),
-                child: const Icon(
-                  Icons.menu_rounded,
-                  size: 31,
+        key: _key,
+        appBar: AppBar(
+          toolbarHeight: 71,
+          automaticallyImplyLeading: false,
+          backgroundColor: const Color.fromRGBO(39, 43, 65, 1),
+          elevation: 2,
+          title: Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  onTap: (() {
+                    _key.currentState!.openDrawer();
+                  }),
+                  child: const Icon(
+                    Icons.menu_rounded,
+                    size: 30,
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ),
+                Image.asset(
+                  'assets/image/logoWith.png',
+                  height: 32,
+                ),
+                const Icon(
+                  CupertinoIcons.search,
+                  size: 23,
                   color: Color.fromARGB(255, 255, 255, 255),
                 ),
-              ),
-              Image.asset(
-                'assets/image/logoWith.png',
-                height: 32,
-              ),
-              const Icon(
-                CupertinoIcons.search,
-                size: 23,
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-      bottomNavigationBar: btmNav(),
-      drawer: drawermenu(),
-      body: homescreen(size: size, textTem: textTem),
-    );
+        bottomNavigationBar: btmNav(
+          callBackPage: (int value) {
+            setState(() {
+              SelectedPageIndex = value;
+            });
+          },
+        ),
+        drawer: drawermenu(),
+        body: changePage[SelectedPageIndex]
+        //  homescreen(size: size, textTem: textTem),
+        );
   }
 }
 
 class btmNav extends StatelessWidget {
-  const btmNav({
-    super.key,
-  });
+  const btmNav({super.key, required this.callBackPage});
+  final Function(int) callBackPage;
 
   @override
   Widget build(BuildContext context) {
@@ -70,36 +85,39 @@ class btmNav extends StatelessWidget {
           color: Color.fromARGB(255, 17, 24, 39),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(0), topRight: Radius.circular(0))),
-      child: const Padding(
-        padding: EdgeInsets.all(15.0),
+      child: Padding(
+        padding: EdgeInsets.all(13.0),
         child: GNav(
-          backgroundColor: Color.fromARGB(255, 17, 24, 39),
-          color: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 17, 24, 39),
+          color: const Color.fromARGB(255, 255, 255, 255),
           activeColor: Colors.white,
-          tabBackgroundColor: Color.fromARGB(133, 74, 74, 74),
-          padding: EdgeInsets.all(15),
+          tabBackgroundColor: const Color.fromARGB(133, 74, 74, 74),
+          padding: const EdgeInsets.all(15),
           gap: 6,
           tabs: [
             GButton(
-              // onPressed: () => callBackPage(0),
+              onPressed: () => callBackPage(0),
               icon: Icons.home,
+              iconSize: 27,
               text: 'خانه',
-              textStyle:
-                  TextStyle(fontFamily: "yekanlight", color: Colors.white),
+              textStyle: const TextStyle(
+                  fontFamily: "yekanlight", color: Colors.white),
             ),
             GButton(
-              // onPressed: () => callBackPage(1),
-              icon: Icons.add,
+              onPressed: () => callBackPage(1),
+              icon: Icons.shopping_basket_sharp,
+              iconSize: 27,
               text: 'استعلام جدید',
-              textStyle:
-                  TextStyle(fontFamily: "yekanlight", color: Colors.white),
+              textStyle: const TextStyle(
+                  fontFamily: "yekanlight", color: Colors.white),
             ),
             GButton(
-              // onPressed: () => callBackPage(2),
-              icon: Icons.account_balance,
+              onPressed: () => callBackPage(2),
+              icon: Icons.account_circle,
+              iconSize: 27,
               text: 'حساب کاربری',
-              textStyle:
-                  TextStyle(fontFamily: "yekanlight", color: Colors.white),
+              textStyle: const TextStyle(
+                  fontFamily: "yekanlight", color: Colors.white),
             ),
           ],
         ),
