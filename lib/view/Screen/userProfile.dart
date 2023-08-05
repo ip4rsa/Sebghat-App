@@ -20,32 +20,36 @@ class userProfile extends StatelessWidget {
         children: [
           const SizedBox(height: 40),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                SvgPicture.asset(
-                  'assets/image/undraw_male_avatar_g98d.svg',
-                  height: 10,
-                ),
-                const Text(
-                  'دانیال حسینی',
-                  style: TextStyle(
-                    fontFamily: 'yekanmedum',
-                    fontSize: 21,
+            padding: const EdgeInsets.fromLTRB(0, 0, 25, 0),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SvgPicture.asset(
+                    'assets/image/undraw_male_avatar_g98d.svg',
+                    height: 60,
                   ),
-                ),
-                const Expanded(child: SizedBox()),
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
-                  child: Icon(
-                    Icons.edit,
-                    color: Colors.amber,
-                    size: 20,
+                  const SizedBox(width: 15),
+                  const Text(
+                    'دانیال حسینی',
+                    style: TextStyle(
+                      fontFamily: 'yekanmedum',
+                      fontSize: 21,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 20),
-              ],
+                  const Expanded(child: SizedBox()),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+                    child: Icon(
+                      Icons.edit,
+                      color: Colors.amber,
+                      size: 20,
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 40),
