@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sebghat_app/view/LogInpage.dart';
 
 class AddCar extends StatefulWidget {
   const AddCar({super.key});
@@ -251,7 +250,7 @@ class _AddCarState extends State<AddCar> {
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(10)),
                                         ),
-                                        labelText: 'شماره شاسی',
+                                        hintText: 'شماره شاسی',
                                         labelStyle: textTem.subtitle2,
                                         filled: true,
                                         fillColor: const Color.fromARGB(
@@ -269,13 +268,7 @@ class _AddCarState extends State<AddCar> {
                                               BorderRadius.circular(5)),
                                       padding: const EdgeInsets.fromLTRB(
                                           10, 5, 10, 5)),
-                                  onPressed: () {
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => LogInPage(),
-                                        ));
-                                  },
+                                  onPressed: () {},
                                   child: Text(
                                     "افزودن تصویر",
                                     style: textTem.headline4,
@@ -308,7 +301,7 @@ class _AddCarState extends State<AddCar> {
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(10)),
                                   ),
-                                  labelText: 'توضیحات مربوطه را بنویسید...',
+                                  hintText: 'توضیحات مربوطه را بنویسید...',
                                   labelStyle: textTem.subtitle2,
                                   filled: true,
                                   fillColor:
@@ -321,7 +314,7 @@ class _AddCarState extends State<AddCar> {
                         padding: const EdgeInsets.fromLTRB(20, 20, 5, 20),
                         child: Row(
                           children: [
-                            Icon(Icons.tab_rounded),
+                            const Icon(Icons.tab_rounded),
                             ElevatedButton.icon(
                               style: ElevatedButton.styleFrom(
                                   elevation: 0,
@@ -332,14 +325,8 @@ class _AddCarState extends State<AddCar> {
                                       Radius.circular(10),
                                     ),
                                   )),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LogInPage(),
-                                  ),
-                                );
-                              },
+                              onPressed: () => _sowSnakbar(context,
+                                  'خودرو با موفقیت به لیست خودرو های شما اصافه شد'),
                               icon:
                                   const Icon(Icons.check, color: Colors.white),
                               label: Padding(
@@ -371,4 +358,14 @@ class _AddCarState extends State<AddCar> {
           style: const TextStyle(color: Color.fromARGB(255, 29, 29, 29)),
         ),
       );
+}
+
+void _sowSnakbar(BuildContext context, String massage) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text(
+      massage,
+      style: const TextStyle(fontFamily: 'yekanlight', fontSize: 18),
+    ),
+    backgroundColor: const Color.fromARGB(255, 6, 160, 75),
+  ));
 }

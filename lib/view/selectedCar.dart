@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sebghat_app/view/AddCar.dart';
 import 'package:sebghat_app/view/OrderPage.dart';
-import 'package:sebghat_app/view/SplashScreen.dart';
 
 class text extends StatefulWidget {
   const text({super.key});
@@ -90,8 +88,7 @@ class _textState extends State<text> {
                           onPressed: () => Navigator.pop(context),
                           style: ElevatedButton.styleFrom(
                               elevation: 2,
-                              backgroundColor:
-                                  const Color.fromARGB(182, 34, 38, 66),
+                              backgroundColor: Color.fromARGB(182, 41, 44, 70),
                               shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(16),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sebghat_app/view/LogInpage.dart';
 
 class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
@@ -249,13 +248,7 @@ class _OrderPageState extends State<OrderPage> {
                                                 BorderRadius.circular(5)),
                                         padding: const EdgeInsets.fromLTRB(
                                             10, 5, 10, 5)),
-                                    onPressed: () {
-                                      Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => LogInPage(),
-                                          ));
-                                    },
+                                    onPressed: () {},
                                     child: Text(
                                       "افزودن تصویر",
                                       style: textTem.headline4,
@@ -312,14 +305,7 @@ class _OrderPageState extends State<OrderPage> {
                                       Radius.circular(10),
                                     ),
                                   )),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LogInPage(),
-                                  ),
-                                );
-                              },
+                              onPressed: () {},
                               icon:
                                   const Icon(Icons.check, color: Colors.white),
                               label: Padding(
@@ -340,11 +326,8 @@ class _OrderPageState extends State<OrderPage> {
                       ),
                       const SizedBox(height: 10),
                       ElevatedButton(
-                        onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => OrderPage(),
-                            )),
+                        onPressed: () =>
+                            _sowSnakbar(context, 'سفارش شما با موفقیت ثبت شد'),
                         style: ElevatedButton.styleFrom(
                             elevation: 2,
                             backgroundColor:
@@ -401,4 +384,14 @@ class _OrderPageState extends State<OrderPage> {
           style: const TextStyle(color: Color.fromARGB(255, 29, 29, 29)),
         ),
       );
+}
+
+void _sowSnakbar(BuildContext context, String massage) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text(
+      massage,
+      style: const TextStyle(fontFamily: 'yekanlight', fontSize: 18),
+    ),
+    backgroundColor: const Color.fromARGB(255, 6, 160, 75),
+  ));
 }

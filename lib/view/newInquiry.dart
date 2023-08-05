@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:sebghat_app/view/selectedCar.dart';
+import 'package:sebghat_app/view/viewInquiry.dart';
 
 class NewInquiry extends StatelessWidget {
   const NewInquiry({super.key, required Size size, required TextTheme textTem});
-
-  Widget _buildCell(String text, Color color) {
-    return Container(
-      color: color,
-      padding: EdgeInsets.all(8),
-      child: Text(text),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,10 +85,7 @@ class NewInquiry extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => NewInquiry(
-                                size: size,
-                                textTem: textTem,
-                              ),
+                              builder: (context) => viewInquiry(),
                             ),
                           );
                         },
@@ -113,40 +101,6 @@ class NewInquiry extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Table(
-                  border: TableBorder.all(),
-                  children: [
-                    TableRow(
-                      children: [
-                        _buildCell(
-                            'تاریخ	', const Color.fromRGBO(228, 232, 249, 1)),
-                        _buildCell(
-                            'برند', const Color.fromRGBO(228, 232, 249, 1)),
-                        _buildCell(
-                            'مدل', const Color.fromRGBO(228, 232, 249, 1)),
-                        _buildCell(
-                            'کلاس', const Color.fromRGBO(228, 232, 249, 1)),
-                        _buildCell(
-                            'سال', const Color.fromRGBO(228, 232, 249, 1)),
-                        _buildCell(
-                            'نتیجه', const Color.fromRGBO(228, 232, 249, 1)),
-                      ],
-                    ),
-                    TableRow(
-                      children: [
-                        _buildCell('1402/5/13', Colors.white),
-                        _buildCell('تسلا', Colors.white),
-                        _buildCell('مدل 3', Colors.white),
-                        _buildCell('-', Colors.white),
-                        _buildCell('1400', Colors.white),
-                        _buildCell('برسی', Colors.white),
-                      ],
-                    ),
-                  ],
-                ),
-              )
             ],
           ),
         ),

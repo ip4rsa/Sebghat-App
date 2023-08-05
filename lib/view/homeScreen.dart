@@ -3,7 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../model/homeItemData.dart';
-import 'newInquiry.dart';
 
 class homescreen extends StatelessWidget {
   homescreen({
@@ -102,14 +101,15 @@ class homescreen extends StatelessWidget {
                                 ),
                               )),
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => NewInquiry(
-                                    size: size,
-                                    textTem: textTem,
-                                  ),
-                                ));
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //       builder: (context) => NewInquiry(
+                            //         size: size,
+                            //         textTem: textTem,
+                            //       ),
+                            //     )
+                            //     );
                           },
                           icon:
                               const Icon(Icons.add_circle, color: Colors.white),
