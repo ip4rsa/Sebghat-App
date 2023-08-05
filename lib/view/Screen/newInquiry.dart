@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sebghat_app/view/selectedCar.dart';
-import 'package:sebghat_app/view/viewInquiry.dart';
+import 'package:sebghat_app/view/Page/selectedCar.dart';
+import 'package:sebghat_app/view/Page/viewInquiry.dart';
 
 class NewInquiry extends StatelessWidget {
   const NewInquiry({super.key, required Size size, required TextTheme textTem});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sebghat_app/view/mainScreen.dart';
-import 'package:sebghat_app/view/SingInPage.dart';
+import 'package:sebghat_app/view/Screen/mainScreen.dart';
+import 'package:sebghat_app/view/Page/SingInPage.dart';
 
 class LogInPage extends StatelessWidget {
   LogInPage({super.key});

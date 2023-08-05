@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:sebghat_app/view/userProfile.dart';
+import 'package:sebghat_app/view/Screen/userProfile.dart';
 import 'homeScreen.dart';
 import 'newInquiry.dart';
 

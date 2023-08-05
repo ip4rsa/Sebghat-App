@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../model/homeItemData.dart';
+import '../../model/homeItemData.dart';
 
 class homescreen extends StatelessWidget {
   homescreen({

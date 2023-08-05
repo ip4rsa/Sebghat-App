@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sebghat_app/view/AddCar.dart';
-import 'package:sebghat_app/view/OrderPage.dart';
+import 'package:sebghat_app/view/Page/AddCar.dart';
+import 'package:sebghat_app/view/Page/OrderPage.dart';
 
 class text extends StatefulWidget {
   const text({super.key});

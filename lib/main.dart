@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sebghat_app/view/SplashScreen.dart';
+import 'package:sebghat_app/view/Page/SplashScreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
