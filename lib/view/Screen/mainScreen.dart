@@ -204,23 +204,26 @@ class drawermenu extends StatelessWidget {
               thickness: .3,
             ),
             const SizedBox(height: 20),
-            InkWell(
-              onTap: () {},
-              child: const ListTile(
-                  title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
+            ListTile(
+                title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
                     "حساب کاربری",
                     style: TextStyle(color: Color.fromARGB(255, 87, 239, 92)),
                   ),
-                  Text(
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
                     "خروج",
                     style: TextStyle(color: Colors.red),
                   ),
-                ],
-              )),
-            ),
+                ),
+              ],
+            )),
           ],
         ),
       ),
