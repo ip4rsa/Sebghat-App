@@ -25,6 +25,7 @@ class LogInPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
             child: TextField(
+              style: textTem.subtitle2,
               textDirection: TextDirection.rtl,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(
@@ -39,6 +40,7 @@ class LogInPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
             child: TextField(
+              style: textTem.subtitle2,
               textDirection: TextDirection.rtl,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(

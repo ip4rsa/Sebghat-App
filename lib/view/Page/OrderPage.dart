@@ -114,7 +114,7 @@ class _OrderPageState extends State<OrderPage> {
                                 iconSize: 30,
                                 elevation: 3,
                                 items: ghatae.map(buildMemuItem).toList(),
-                                onChanged: (value) =>
+                                onChanged: (ghatae) =>
                                     setState(() => this.value = value),
                               ),
                             ),
@@ -154,7 +154,7 @@ class _OrderPageState extends State<OrderPage> {
                                 iconSize: 30,
                                 elevation: 3,
                                 items: tipe.map(buildMemuItem).toList(),
-                                onChanged: (value) =>
+                                onChanged: (tipe) =>
                                     setState(() => this.value = value),
                               ),
                             ),
@@ -173,6 +173,7 @@ class _OrderPageState extends State<OrderPage> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
                         child: TextField(
+                          style: textTem.subtitle2,
                           textDirection: TextDirection.rtl,
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(
@@ -196,6 +197,7 @@ class _OrderPageState extends State<OrderPage> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
                         child: TextField(
+                          style: textTem.subtitle2,
                           textDirection: TextDirection.rtl,
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(
@@ -219,6 +221,7 @@ class _OrderPageState extends State<OrderPage> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
                         child: TextField(
+                          style: textTem.subtitle2,
                           textDirection: TextDirection.rtl,
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(
@@ -274,6 +277,7 @@ class _OrderPageState extends State<OrderPage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                             child: TextField(
+                              style: textTem.subtitle2,
                               textDirection: TextDirection.rtl,
                               decoration: InputDecoration(
                                   contentPadding: const EdgeInsets.symmetric(

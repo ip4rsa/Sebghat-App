@@ -101,15 +101,8 @@ class homescreen extends StatelessWidget {
                                 ),
                               )),
                           onPressed: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (context) => NewInquiry(
-                            //         size: size,
-                            //         textTem: textTem,
-                            //       ),
-                            //     )
-                            //     );
+                            _sowSnakbar(
+                                context, 'این بخش به انتخاب شما تکمیل میشود');
                           },
                           icon:
                               const Icon(Icons.add_circle, color: Colors.white),
@@ -181,4 +174,14 @@ class homescreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void _sowSnakbar(BuildContext context, String massage) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text(
+      massage,
+      style: const TextStyle(fontFamily: 'yekanlight', fontSize: 18),
+    ),
+    backgroundColor: const Color.fromARGB(255, 6, 160, 75),
+  ));
 }

@@ -26,8 +26,9 @@ class SingInPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                 child: TextField(
-                  textDirection: TextDirection.rtl,
+                  style: textTem.subtitle2,
                   decoration: InputDecoration(
+                    fillColor: Colors.amber,
                     border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(17)),
                     ),
@@ -38,8 +39,9 @@ class SingInPage extends StatelessWidget {
               ),
               const SizedBox(height: 7),
               Padding(
-                padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                 child: TextField(
+                  style: textTem.subtitle2,
                   textDirection: TextDirection.rtl,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(
@@ -54,6 +56,7 @@ class SingInPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
                 child: TextField(
+                  style: textTem.subtitle2,
                   textDirection: TextDirection.rtl,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(
@@ -65,11 +68,12 @@ class SingInPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 7),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
                 child: TextField(
+                  style: textTem.subtitle2,
                   textDirection: TextDirection.rtl,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(17)),
                     ),
@@ -95,6 +99,15 @@ class SingInPage extends StatelessWidget {
                   style: textTem.headline2,
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: const Text(
+                    "بازگشت",
+                  ),
+                ),
+              )
             ],
           ),
         ),

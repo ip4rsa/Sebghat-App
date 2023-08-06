@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'LogInpage.dart';
+import 'package:sebghat_app/view/Page/Introdoction.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(const Duration(seconds: 5)).then((value) {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => LogInPage()));
+          MaterialPageRoute(builder: (context) => introdoction()));
     });
     super.initState();
   }

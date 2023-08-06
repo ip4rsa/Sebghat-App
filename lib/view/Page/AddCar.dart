@@ -115,7 +115,7 @@ class _AddCarState extends State<AddCar> {
                                 iconSize: 30,
                                 elevation: 3,
                                 items: carList.map(buildMemuItem).toList(),
-                                onChanged: (value) =>
+                                onChanged: (carList) =>
                                     setState(() => this.value = value),
                               ),
                             ),
@@ -155,7 +155,7 @@ class _AddCarState extends State<AddCar> {
                                 iconSize: 30,
                                 elevation: 3,
                                 items: carModel.map(buildMemuItem).toList(),
-                                onChanged: (value) =>
+                                onChanged: (carModel) =>
                                     setState(() => this.value = value),
                               ),
                             ),
@@ -213,6 +213,7 @@ class _AddCarState extends State<AddCar> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
                         child: TextField(
+                          style: textTem.subtitle2,
                           textDirection: TextDirection.rtl,
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(
@@ -244,6 +245,7 @@ class _AddCarState extends State<AddCar> {
                                   padding:
                                       const EdgeInsets.fromLTRB(0, 30, 0, 0),
                                   child: TextField(
+                                    style: textTem.subtitle2,
                                     textDirection: TextDirection.rtl,
                                     decoration: InputDecoration(
                                         border: const OutlineInputBorder(
@@ -293,6 +295,7 @@ class _AddCarState extends State<AddCar> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                             child: TextField(
+                              style: textTem.subtitle2,
                               textDirection: TextDirection.rtl,
                               decoration: InputDecoration(
                                   contentPadding: const EdgeInsets.symmetric(
